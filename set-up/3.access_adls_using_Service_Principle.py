@@ -1,5 +1,9 @@
 # Databricks notebook source
+dbutils.secrets.get(scope="Formula1 Scope",key="formula1-account-key")
 
+# COMMAND ----------
+
+dbutils.secrets.list(scope='Formula1 Scope')
 
 # COMMAND ----------
 
@@ -7,9 +11,9 @@
 
 # COMMAND ----------
 
-client_id = "0db11108-1edf-4a24-8c7d-27bf7450a0ab"
-tenant_id = "5c979e27-0063-4697-891c-ba85b3eddf83"
-secret = "STa8Q~o430sSgEc4nk5_jVkL3jgO6myf3bw5-aNB"
+client_id = dbutils.secrets.get(scope="Formula1 Scope",key="formula-1-clientID")
+tenant_id = dbutils.secrets.get(scope="Formula1 Scope",key="tenantId")
+secret = dbutils.secrets.get(scope="Formula1 Scope",key="formula1-secret")
 
 # COMMAND ----------
 

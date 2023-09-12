@@ -3,16 +3,15 @@
 
 # COMMAND ----------
 
+formula1_dl_accountkey = dbutils.secrets.get(scope="Formula1 Scope",key="formula1-account-key")
+
+# COMMAND ----------
+
 
 
 # COMMAND ----------
 
-# Access Key = wZ0q+V+Ln1EZDJbNdDSBb9PaEDhCNwaF2fyxtJ4jzq5yBpFxPo/LmhotgGkErapOPRawz3N9koYi+ASt2W+/Iw==
-DefaultEndpointsProtocol=https;AccountName=formula1adlsshreyansh;AccountKey=APuZzCC+y7KQMi7PqENYbtDEBp04HpdpwwdTA5vy9JX/RsUIFOdgrtGhIUliApaoW6IB+m5zlZwT+AStCCb2Kw==;EndpointSuffix=core.windows.net
-
-# COMMAND ----------
-
-spark.conf.set("fs.azure.account.key.formula1adlsshreyansh.dfs.core.windows.net","wZ0q+V+Ln1EZDJbNdDSBb9PaEDhCNwaF2fyxtJ4jzq5yBpFxPo/LmhotgGkErapOPRawz3N9koYi+ASt2W+/Iw==")
+spark.conf.set("fs.azure.account.key.formula1adlsshreyansh.dfs.core.windows.net",formula1_dl_accountkey)
 
 # COMMAND ----------
 
